@@ -1,0 +1,528 @@
+%	This LaTeX file is written by Zhiyang Ong as a template for creating presentation slides.
+
+%	The MIT License (MIT)
+
+%	Copyright (c) <2015> <Zhiyang Ong>
+
+%	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+%	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+%	Email address: echo "cukj -wb- 23wU4X5M589 TROJANS cqkH wiuz2y 0f Mw Stanford" | awk '{ sub("23wU4X5M589","F.d_c_b. ") sub("Stanford","d0mA1n"); print $5, $2, $8; for (i=1; i<=1; i++) print "6\b"; print $9, $7, $6 }' | sed y/kqcbuHwM62z/gnotrzadqmC/ | tr 'q' ' ' | tr -d [:cntrl:] | tr -d 'ir' | tr y "\n"
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Preamble
+
+%	Acknowledgement:
+%		This is based on a template provided to me by Dott. Francesco Stefanni, from the University of Verona in January 2011.
+%
+%	Number the slides per section. This makes it easier to track the index of the slides (or number of slides) per section, as opposed to the cumulative number of slides. When I manually track the number of slides for a presentation, each time I refactor the set of slides, I would have to update the slide numbers. I want the computer to do this automatically. Hence, I shall not do this manually.
+
+
+
+%	Use the Beamer package to create the presentation slides.
+\documentclass[xcolor={usenames,dvipsnames},hyperref={hyperindex,bookmarks}]{beamer}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Import and Customize LaTeX packages.
+\usepackage{beamerthemesplit}
+
+
+%	Package for typesetting the following symbol: $\mathfrak{S}$
+%\usepackage{amssymb}
+
+%\mode<presentation>
+%{ \usetheme{boxes} }
+
+%	Select the presentation mode.
+\mode<presentation>{
+	\usetheme[logos=true,pagenumbers=true,background=true]{Esd}
+}
+\setbeamercovered{transparent}
+%\setbeamercovered{invisible}
+
+
+%	Import package to facilitate typesetting of algorithms.
+\usepackage{listings}
+
+\lstset{
+  language=C++,
+  tabsize=4,
+%  basicstyle=\ttfamily\color{black}\small,
+  basicstyle=\ttfamily\color{black},
+%  backgroundcolor=\color{lightgray},
+%  backgroundcolor=\color{white},
+  keywordstyle=\color{Purple}\bfseries,
+  identifierstyle=\color{OliveGreen},
+  commentstyle=\color{Gray}\itshape,
+  stringstyle=\color{CarnationPink},
+  showstringspaces=false,
+  showtabs=false,
+  showspaces=false
+}
+
+
+\definecolor{lightgray}{gray}{0.95}
+\font\emailtt=cmtt9
+
+%	Set up configuration for hyperlinks.
+%\usepackage[pdftex]{hyperref}	-- Option clash
+\hypersetup{
+    pdftitle={Making an {\it Arduino} Memory Game},     % title
+    pdfauthor={Zhiyang Ong},                 % author
+    pdfsubject={IEEE Aggie Mentorship Program}, % subject of the document
+    pdfcreator={Creator},                           % creator of the document
+    pdfproducer={dvipdft},                          % producer of the document
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfkeywords={LaTeX, graphics, color},
+%    pdfkeywords={C, C++, programming style},        % list of keywords
+%
+%    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobats bookmarks
+    pdftoolbar=true,        % show Acrobats toolbar?
+    pdfmenubar=true,        % show Acrobats menu?
+    pdffitwindow=false,     % window fit to page when opened
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfpagemode=UseOutlines,bookmarks, bookmarksopen,
+	pdfstartview=FitH, colorlinks, linkcolor=blue, citecolor=blue, urlcolor=red,
+%    pdfstartview={Fit},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new window
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	colorlinks=red,        % false: boxed links; true: colored links
+	linkcolor=red,          % color of internal links
+%    colorlinks=false,        % false: boxed links; true: colored links
+%    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red,           % color of external links
+    pdfpagemode=FullScreen
+    %
+    %pdfpagelabels=false
+}
+
+%\usepackage[all]{hypcap}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Added by Zhiyang Ong on Feb 7, 2011 to allow figures to be places side-by-side
+%\usepackage{subfigure}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%	Quantum Model Checking Is Not Evil: It Is Mandatory For Quantum Robots
+
+
+%	First slide of the presentation
+\title[ISEN 689 Writing Grant Proposals]
+{\huge 
+Homework Assignment \#1}
+\subtitle{Presentation About Myself}
+\author{Zhiyang Ong}
+\institute{
+	Department of Electrical and Computer Engineering \\
+	Dwight Look College of Engineering,\\
+	Texas A\&M University \\
+	College Station, TX
+}
+\date{\today}	% (optional)
+\subject{Subject Title}
+
+%	This set of presentation slides is based on \cite{Ying2014a}, from my BibTeX research database.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Do nothing in this section of the LaTeX document
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+%%	Table of Contents
+%\AtBeginSection[]		% Do nothing for \subsection*
+%{
+%	\begin{frame}
+%%		\frametitle{\textcolor{yellow}{Table of Contents}}
+%		\frametitle{Table of Contents}
+%%		\textcolor{yellow}{\tableofcontents[currentsection]}
+%		\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\AtBeginSubsection[]		% Do nothing for \subsection*
+%{
+%\begin{frame}
+%\tableofcontents[currentsection,currentsubsection]
+%\end{frame}
+%}
+
+
+
+%	Avoid showing the contents slide.
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Slides begin HERE!!!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Preamble
+
+%	Slide #1
+\section*{Preamble}
+\frame{
+	\frametitle{Acknowledgments}
+
+	Dott. Francesco Stefanni, formerly at the University of Verona, who provided me with a {\rm \LaTeX} template for presentation slides. 
+}
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	General Background
+\section{General Background}
+
+%	Slide 1
+\frame
+{
+	\frametitle{General Background}
+
+	\begin{itemize}
+	\item Full name: Zhiyang Ong
+	\item The name you prefer to be called in the class: Zhiyang (or Giovanni)
+	\item Department: Electrical and Computer Engineering (ECEN)
+	\item Adviser(s): Prof. Laszlo Kish
+	\item Research topic: Designing computer hardware using noise-based logic.
+	\item Starting and anticipated graduation dates: Spring 2014 and Spring 2020
+	\item Hometown: In the last 20 years, I have lived in: Adelaide (Australia); Los Angeles (California); Trento and Verona (Italy); Taipei (Taiwan); Aggieland (Tejas).
+	\end{itemize}
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Education Background
+\section{Education Background}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Education Background}
+
+	\begin{itemize}
+	\item Bachelor: Electrical and Electronic Engineering, 2005, University of Adelaide (AU)
+	\item Master's: Electrical Engineering, 2008, University of Southern California (USC)
+	\item Ph.D.: Electrical Engineering, 2020???, Texas A\&M University (TAMU)
+	\item Other universities that I have studied in or interned with:
+		\begin{itemize}
+		\item University of Trento (internship)
+		\item University of Verona (graduate-level coursework in computer science)
+		\item National Taiwan University (graduate-level coursework in electronics engineering)
+		\end{itemize}
+	\end{itemize}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Self Assessment on Proposal Writing
+\section{Self Assessment on Proposal Writing}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Self Assessment on Proposal Writing}
+	{\footnotesize 
+	\begin{itemize}
+	\item Knowledge about funding agencies (3 out of 10) %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item {\footnotesize NSF (1 out of 10), and NASA (1)}
+		\item {\footnotesize DoE (0), DARPA (0), NIST (1), and AFOSR (1)}
+		\item {\footnotesize Facebook Research's Academic Programs (1)}
+		\item {\footnotesize Semiconductor Research Corporation's Global Research Collaboration (GRC) (2)}
+		\end{itemize}
+	\item NSF proposal writing (0) %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item {\footnotesize PI or co-PI on about 0 proposals (including supplements)}
+		\item {\footnotesize 0 awarded (including supplements)}
+		\end{itemize}
+	\item Other research proposals co-authored (10 out of 10)
+		\begin{itemize} %\itemsep -2pt
+		\item {\footnotesize Prateek Tandon, Alex Mitev, Stanley Lam, Ben Shih, Zhiyang Ong, ``Quantum Adiabatic Implementation of the Quadratic Traveling Salesman Problem (QTSP) and Applications,'' submitted to a Request for Proposal by the Quantum Artificial Intelligence Laboratory (NASA's Ames Research Center, Google, and the Universities Space Research Association), 2017. Status: Accepted.}
+		\end{itemize}
+	\end{itemize}
+	}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Self Assessment on Teaching
+\section{Self Assessment on Teaching}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Self Assessment on Teaching}
+
+	\begin{itemize} \itemsep -2pt
+	\item Courses taught as instructor %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item {\it UNIX} course at the {\it Institute of Microelectronics, Singapore} (IME)
+			\begin{itemize}
+			\item {\scriptsize \url{https://eda-ricercatore.github.io/vecchi-progetti/technical-writing/UNIX_course_notes.pdf}}
+			\item {\scriptsize \url{https://eda-ricercatore.github.io/vecchi-progetti/technical-writing/UNIX_course_presentation_slides.pdf}}
+			\item {\scriptsize \url{https://eda-ricercatore.github.io/vecchi-progetti/technical-writing/UNIX_FAQ.pdf}}
+			\end{itemize}
+		\end{itemize}
+	\item Courses as grader: None
+	\item Labs as helper: None
+	\item Tutoring experience: Lincoln College (AU), volunteer academic tutor in residential hall
+	\item Overall score: 5 out of 10
+	\end{itemize}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Self Assessment on Publications
+\section{Self Assessment on Publications}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Self Assessment on Publications}
+
+	\begin{itemize} %\itemsep -2pt
+	\item Journal papers (0) %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item 0 journal papers
+		\item No citation information
+		\end{itemize}
+	\item Conference papers (3)
+		\begin{itemize}
+		\item 2 conference papers, and 1 long abstract
+		\item Citation information: 2 citations
+		\end{itemize}
+	\item Books (1)
+		\begin{itemize}
+		\item 1 co-authored book
+		\item No citation information
+		\end{itemize}
+	\item Overall score: 2 out of 10
+	\end{itemize}
+}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Self Assessment on Network/Collaborating
+\section{Self Assessment on Network/Collaborating}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Self Assessment on Network/Collaborating}
+
+	\begin{itemize} %\itemsep -2pt
+	\item Collaboration within TAMU (1) %\vspace{-0.3cm}
+		\begin{itemize} %\itemsep -2pt
+		\item Computer Science
+		\end{itemize}
+	\item Collaboration with national labs (0)
+	\item Collaboration with industry (1)
+		\begin{itemize}
+		\item SRC-funded project with Intel's researchers in Haifa, Israel and Hillsboro, Oregon
+		\end{itemize}
+	\item Overall score: 1 out of 10
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Self Assessment on Supervising
+\section{Self Assessment on Supervising}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Self Assessment on Supervising}
+
+	\begin{itemize}
+	\item PhD students (0)
+	\item MS students (0)
+	\item Undergraduate students (0)
+	\item Mentoring experience (10)
+		\begin{itemize}
+		\item Aggie Graduate \&\ Professional Community Club (TAMU), mentor for undergraduates
+		\item IEEE student chapter (TAMU), mentor for IEEE Aggie Mentorship Program
+		\end{itemize}
+	\item Overall score: 2 out of 10
+	\end{itemize}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	How Can This Course Help Me?
+\section{How Can This Course Help Me?}
+
+%	Slide 1
+\frame
+{
+	\frametitle{How Can This Course Help Me?}
+
+	\begin{itemize}
+	\item Writing winning grant proposals $\longrightarrow$ Most
+		\begin{itemize}
+		\item Knowing funding opportunities
+		\item Formulating proposal ideas
+		\item Writing proposals
+		\end{itemize}
+	\item Teaching $\longrightarrow$ Moderate
+		\begin{itemize}
+		\item Giving presentations/lectures
+		\item Giving exams and grading 
+		\end{itemize}
+	\item Publishing $\longrightarrow$ Slightly
+	\item Networking/collaborating $\longrightarrow$ not much
+	\item Supervising $\longrightarrow$ None
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Some Questions I Have Now
+\section{Some Questions I Have Now}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Some Questions I Have Now}
+
+	\begin{itemize}
+	\item Will this course be offered next semester?
+	\item What other courses can help me getting ready for a faculty position?
+	\item Can we use {\it GitHub} to carry out peer grading of our classmates' homework?
+	\item Can we suggest questions for the midterm and final examination?
+	\item How many research proposals do we have to submit?
+	\item What topics do we have to give presentations on? Are they from the list of course topics in the course syllabus, or outside the course syllabus?
+	\item Do we get to select topics for our presentations?
+	\end{itemize}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{References}
+%
+%\frame
+%{
+%	\frametitle{References}
+%
+%%	\begin{itemize}
+%%	\item \cite{Weng2011}
+%%	\end{itemize}
+%%}
+%
+%
+%	{\linespread{1}
+%	%\bibliographystyle{IEEEtran}
+%	\bibliographystyle{plain}
+%	%\bibliography{./others/references}
+%	%\bibliography{/data/others/notes/references}
+%	\bibliography{/data/research/antipastobibtex/references}
+%	%\addcontentsline{toc}{chapter}{Bibliography}
+%	}
+%}
+
+\end{document}
+
+
+%
+%	Trying to delay the not-uncommon path of engineering Ph.D.s who end up becoming "PowerPoint engineers"... Hopefully, slapping together a bunch of presentation slides to talk about any topic in any reasonable finite amount of time is not the most useful skill that I would learn as a grad student... Hey, at least I did it in LaTeX/Beamer!!!
+
+
+
+
+
+
+ 
