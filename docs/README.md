@@ -18,6 +18,7 @@ A repository for my course on writing research proposals, and learning about ski
 		* LaTeX source code for a set of *LaTeX* presentation slides, for
 			my presentation about what I have learned in the class, and what
 			I want others to remember about me and know.
+		* [Shortcut to slides](https://github.com/eda-ricercatore/propuesta-de-investigacion/blob/master/homework/last-assignment/homework-assignment-13-zhiyang-ong.pdf)
 		* [Backup slides](https://drive.google.com/file/d/1D9op2K9DUeetltOa8kvk6CpbIZ-CPZop/view?usp=sharing)
 
 
