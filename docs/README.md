@@ -8,13 +8,17 @@ A repository for my course on writing research proposals, and learning about ski
 ## Organization of the Repository
 
 + docs
-  - LICENSE: MIT License for this repository.
+	- LICENSE: MIT License for this repository.
 + homework
-  - 1st-assignment
-    * Files for a set of *LaTeX* presentation slides, for my presentation to
-      provide the course instructor, Prof. Zhijian Pei, and my classmates
-      information about me.
-
+	- 1st-assignment
+		* Files for a set of *LaTeX* presentation slides, for my presentation to
+			provide the course instructor, Prof. Zhijian Pei, and my classmates
+			information about me.
+	- last-assignment
+		* LaTeX source code for a set of *LaTeX* presentation slides, for
+			my presentation about what I have learned in the class, and what
+			I want others to remember about me and know.
+		* [Backup slides](https://drive.google.com/file/d/1D9op2K9DUeetltOa8kvk6CpbIZ-CPZop/view?usp=sharing)
 
 
 
