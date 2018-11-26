@@ -1,0 +1,361 @@
+%	This LaTeX file is written by Zhiyang Ong as a template for creating presentation slides.
+
+%	The MIT License (MIT)
+
+%	Copyright (c) <2015> <Zhiyang Ong>
+
+%	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+%	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+%	Email address: echo "cukj -wb- 23wU4X5M589 TROJANS cqkH wiuz2y 0f Mw Stanford" | awk '{ sub("23wU4X5M589","F.d_c_b. ") sub("Stanford","d0mA1n"); print $5, $2, $8; for (i=1; i<=1; i++) print "6\b"; print $9, $7, $6 }' | sed y/kqcbuHwM62z/gnotrzadqmC/ | tr 'q' ' ' | tr -d [:cntrl:] | tr -d 'ir' | tr y "\n"
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Preamble
+
+%	Acknowledgement:
+%		This is based on a template provided to me by Dott. Francesco Stefanni, from the University of Verona in January 2011.
+%
+%	Number the slides per section. This makes it easier to track the index of the slides (or number of slides) per section, as opposed to the cumulative number of slides. When I manually track the number of slides for a presentation, each time I refactor the set of slides, I would have to update the slide numbers. I want the computer to do this automatically. Hence, I shall not do this manually.
+
+
+
+%	Use the Beamer package to create the presentation slides.
+\documentclass[xcolor={usenames,dvipsnames},hyperref={hyperindex,bookmarks}]{beamer}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Import and Customize LaTeX packages.
+\usepackage{beamerthemesplit}
+
+
+%	Package for typesetting the following symbol: $\mathfrak{S}$
+%\usepackage{amssymb}
+
+%\mode<presentation>
+%{ \usetheme{boxes} }
+
+%	Select the presentation mode.
+\mode<presentation>{
+	\usetheme[logos=true,pagenumbers=true,background=true]{Esd}
+}
+\setbeamercovered{transparent}
+%\setbeamercovered{invisible}
+
+
+%	Import package to facilitate typesetting of algorithms.
+\usepackage{listings}
+
+\lstset{
+  language=C++,
+  tabsize=4,
+%  basicstyle=\ttfamily\color{black}\small,
+  basicstyle=\ttfamily\color{black},
+%  backgroundcolor=\color{lightgray},
+%  backgroundcolor=\color{white},
+  keywordstyle=\color{Purple}\bfseries,
+  identifierstyle=\color{OliveGreen},
+  commentstyle=\color{Gray}\itshape,
+  stringstyle=\color{CarnationPink},
+  showstringspaces=false,
+  showtabs=false,
+  showspaces=false
+}
+
+
+\definecolor{lightgray}{gray}{0.95}
+\font\emailtt=cmtt9
+
+%	Set up configuration for hyperlinks.
+%\usepackage[pdftex]{hyperref}	-- Option clash
+\hypersetup{
+    pdftitle={Last Homework Assignment},     % title
+    pdfauthor={Zhiyang Ong},                 % author
+    pdfsubject={ISEN 689 Proposal Writing for Ph.D. Students}, % subject of the document
+    pdfcreator={Creator},                           % creator of the document
+    pdfproducer={dvipdft},                          % producer of the document
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfkeywords={LaTeX, graphics, color},
+%    pdfkeywords={C, C++, programming style},        % list of keywords
+%
+%    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobats bookmarks
+    pdftoolbar=true,        % show Acrobats toolbar?
+    pdfmenubar=true,        % show Acrobats menu?
+    pdffitwindow=false,     % window fit to page when opened
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	pdfpagemode=UseOutlines,bookmarks, bookmarksopen,
+	pdfstartview=FitH, colorlinks, linkcolor=blue, citecolor=blue, urlcolor=red,
+%    pdfstartview={Fit},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new window
+% Modified by Zhiyang Ong on Feb 7, 2011 to improve the way hyperlinks are colored in these presentation slides
+	colorlinks=red,        % false: boxed links; true: colored links
+	linkcolor=red,          % color of internal links
+%    colorlinks=false,        % false: boxed links; true: colored links
+%    linkcolor=red,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red,           % color of external links
+    pdfpagemode=FullScreen
+    %
+    %pdfpagelabels=false
+}
+
+%\usepackage[all]{hypcap}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Added by Zhiyang Ong on Feb 7, 2011 to allow figures to be places side-by-side
+%\usepackage{subfigure}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%	Quantum Model Checking Is Not Evil: It Is Mandatory For Quantum Robots
+
+
+%	First slide of the presentation
+\title[ISEN 689 Writing Grant Proposals]
+{\huge 
+Homework Assignment \#13}
+\subtitle{Reflections}
+\author{Zhiyang Ong}
+\institute{
+	Department of Electrical and Computer Engineering \\
+	%Dwight Look College of Engineering,\\
+	College of Engineering,\\
+	Texas A\&M University \\
+	College Station, TX
+}
+\date{\today}	% (optional)
+\subject{Subject Title}
+
+%	This set of presentation slides is based on \cite{Ying2014a}, from my BibTeX research database.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Do nothing in this section of the LaTeX document
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+%%	Table of Contents
+%\AtBeginSection[]		% Do nothing for \subsection*
+%{
+%	\begin{frame}
+%%		\frametitle{\textcolor{yellow}{Table of Contents}}
+%		\frametitle{Table of Contents}
+%%		\textcolor{yellow}{\tableofcontents[currentsection]}
+%		\tableofcontents[currentsection,currentsubsection]
+%	\end{frame}
+%}
+%
+%\AtBeginSubsection[]		% Do nothing for \subsection*
+%{
+%\begin{frame}
+%\tableofcontents[currentsection,currentsubsection]
+%\end{frame}
+%}
+
+
+
+%	Avoid showing the contents slide.
+%\section*{Outline}
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%	Slides begin HERE!!!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Preamble
+
+%	Slide #1
+%\section*{Preamble}
+%\frame{
+%	\frametitle{Acknowledgments}
+%
+%	Dott. Francesco Stefanni, formerly at the University of Verona, who provided me with a {\rm \LaTeX} template for presentation slides. 
+%}
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Things that I have Learned from the Class
+\section{Things that I have Learned from the Class}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Things that I have Learned from the Class, and How Can They Help Me in My Career}
+
+	\begin{itemize}
+	\item The nuances of writing an award-winning NSF research proposal for funding. %\vspace{-0.3cm}
+		\begin{enumerate} %\itemsep -2pt
+		\item The differences between intellectual merit and broader impacts.
+		\item How to write good research objectives.
+		\item Finding a NSF ``home program.''
+		\item Write a proposal based on how it would be reviewed.
+		\item Connecting our research proposals to big ideas/challenges (such as data science) of NSF, NAE, DARPA, DOE, and/or other research funding agency.
+		\item Prioritizing NSF funding opportunities over other funding opportunities as a tenure-track assistant professor in a U.S. research university.
+		\end{enumerate}
+	\item Carrying out synergistic activities.
+	\item Networking and collaborating with professors (and researchers) from other disciplines/domains.
+	\end{itemize}
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Things I would Like You to Remember About Me
+\section{Things I would Like You to Remember About Me}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Things I would Like You to Remember About Me}
+
+	\begin{itemize}
+	\item I love to collaborate on {\bf interdisciplinary research projects}.
+	\item I care a lot about {\bf broadening participation} of women and people from underrepresented groups in research activities.
+	\item I have {\bf good intercultural competence}, and am {\bf willing to relocate} to be a professor in any good research university around the world.
+	\end{itemize}
+}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Some Questions I Have Now
+\section{Some Questions I Have Now}
+
+%	Slide 1
+\frame
+{
+	\frametitle{Some Questions I Have Now}
+
+	\begin{itemize}
+	\item How do we choose between job offers from average U.S. research universities and prestigious research universities outside the U.S. (or, at least, regionally prestigious universities)?
+		\begin{itemize}
+		\item E.g., EPFL, ETH Z{\"{u}}rich, TUM, Peking University, National Taiwan University, University of Sydney, top-5 IIT campuses, METU, Sharif University of Technology, UNAM, and Unicamp.
+		\end{itemize}
+	\item Can you please kindly help us decide between academic job offers?
+	\end{itemize}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	What I want to Say to the Class
+\section{What I want to Say to the Class}
+
+%	Slide 1
+\frame
+{
+	\frametitle{What I want to Say to the Class}
+
+	\begin{itemize}
+	\item I would be grateful and honored for opportunities to do the following {\bf for free}.
+		\begin{enumerate}
+		\item {\bf analyze your experimental/simulation data}, and
+		\item {\bf write research papers with you},
+		\item as long as you {\bf allow me to be a co-author}
+		\end{enumerate}
+	\item I plan to be in the academic job market in 2-3 semesters. %\vspace{-0.3cm}
+		\begin{enumerate} %\itemsep -2pt
+		\item If you know of faculty openings in electrical engineering, computer engineering, computer science, and industrial and systems engineering, please kindly consider informing me about them.
+		\item When you become one of the professors in faculty search committees, please kindly invite me to apply for faculty openings in your department.
+		\end{enumerate}
+	\end{itemize}
+}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{References}
+%
+%\frame
+%{
+%	\frametitle{References}
+%
+%%	\begin{itemize}
+%%	\item \cite{Weng2011}
+%%	\end{itemize}
+%%}
+%
+%
+%	{\linespread{1}
+%	%\bibliographystyle{IEEEtran}
+%	\bibliographystyle{plain}
+%	%\bibliography{./others/references}
+%	%\bibliography{/data/others/notes/references}
+%	\bibliography{/data/research/antipastobibtex/references}
+%	%\addcontentsline{toc}{chapter}{Bibliography}
+%	}
+%}
+
+\end{document}
+
+
+%
+%	Trying to delay the not-uncommon path of engineering Ph.D.s who end up becoming "PowerPoint engineers"... Hopefully, slapping together a bunch of presentation slides to talk about any topic in any reasonable finite amount of time is not the most useful skill that I would learn as a grad student... Hey, at least I did it in LaTeX/Beamer!!!
+
+
+
+
+
+
+ 

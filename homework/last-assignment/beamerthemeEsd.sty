@@ -1,0 +1,277 @@
+%	This is my modified copy of the LaTeX style template from Dr. Francesco Stefanni, who grace me this copy while I was at the University of Verona in January 2011.
+
+% Copyright 2009 by Francesco Stefanni
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackageRCS $Header: beamerthemeEsd.sty,v 1.0 2009/12/28 13:31:05 Stefanni Exp $
+
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Options.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\ifbeamer@logos
+\beamer@logostrue
+
+\newif\ifbeamer@backgroundimage
+\beamer@backgroundimagetrue
+
+\newif\ifbeamer@pagenumbers
+\beamer@pagenumberstrue
+
+
+\DeclareOptionBeamer{logos}[true]{\csname beamer@logos#1\endcsname}
+\DeclareOptionBeamer{background}[true]{\csname beamer@backgroundimage#1\endcsname}
+\DeclareOptionBeamer{pagenumbers}[true]{\csname beamer@pagenumbers#1\endcsname}
+
+
+%% \ExecuteOptionsBeamer{logos}
+
+
+\ProcessOptionsBeamer
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Color settings.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{darkred}{rgb}{0.8,0,0}
+
+
+% Text:
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{example text}{parent=normnal text}
+\setbeamercolor*{alerted text}{parent=normnal text,fg=darkred!60!black}
+
+\setbeamercolor*{structure}{fg=darkred!60!black,bg=white}
+\setbeamercolor*{item projected}{fg=white,bg=darkred!60!black}
+
+\setbeamercolor*{titlelike}{bg=darkred!60!black,fg=white}
+
+\setbeamercolor*{block title}{fg=white,bg=darkred!60!black}
+\setbeamercolor*{block title alerted}{fg=white,bg=darkred!60!black}
+\setbeamercolor*{block title example}{fg=white,bg=darkred!60!black}
+
+\setbeamercolor*{block body}{parent=normal text}
+\setbeamercolor*{block body alerted}{parent=alerted text}
+\setbeamercolor*{block body example}{parent=example text}
+
+\setbeamercolor*{section in toc}{parent=normal text}
+\setbeamercolor*{sidebar}{parent=normal text}
+
+\setbeamercolor*{frametitle}{parent=block title}
+\setbeamercolor*{framesubtitle}{parent=frametitle}
+\setbeamercolor*{subtitle}{parent=frametitle}
+
+
+% Math:
+\setbeamercolor*{math text}{parent=normal text}
+\setbeamercolor*{math text inlined}{parent=math text}
+\setbeamercolor*{math text displayed}{parent=math text}
+\setbeamercolor*{normal text in math text}{parent=math text}
+
+% Outher:
+
+\setbeamercolor*{palette primary}{bg=darkred!60!black,fg=white}
+\setbeamercolor*{palette secondary}{bg=darkred!60!black,fg=white}
+\setbeamercolor*{palette tertiary}{bg=darkred!60!black,fg=white}
+\setbeamercolor*{palette quaternary}{bg=darkred!60!black,fg=white}
+
+\setbeamercolor*{palette sidebar primary}{parent=palette primary}
+\setbeamercolor*{palette sidebar secondary}{parent=palette secondary}
+\setbeamercolor*{palette sidebar tertiary}{parent=palette tertiary}
+\setbeamercolor*{palette sidebar quaternary}{parent=palette quaternary}
+
+% Lines:
+\setbeamercolor*{separation line}{fg=black}
+\setbeamercolor*{upper separation line head}{parent=separation line}
+\setbeamercolor*{middle separation line head}{parent=separation line}
+\setbeamercolor*{lower separation line head}{parent=separation line}
+\setbeamercolor*{upper separation line foot}{parent=separation line}
+\setbeamercolor*{middle separation line foot}{parent=separation line}
+\setbeamercolor*{lower separation line foot}{parent=separation line}
+
+
+%% \setbeamercolor*{subsection in head/foot}{parent=structure}
+%% \setbeamercolor*{section in head/foot}{parent=structure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inner theme settings.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{sections/subsections in toc}[circle]
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=true]
+\setbeamertemplate{part page}[default][colsep=-4bp,rounded=true,shadow=true]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Outer theme settings.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setbeamercolor{subsection in head/foot shaded}{}
+\setbeamercolor{section in head/foot shaded}{}
+
+\setbeamercolor{section in head/foot}{parent=palette quaternary}
+\setbeamercolor{subsection in head/foot}{parent=palette primary}
+%% \setbeamercolor{subsection in head/foot shaded}{parent=palette primary}
+%% \setbeamercolor{section in head/foot shaded}{parent=palette primary}
+
+\setbeamercolor{author in head/foot}{parent=section in head/foot}
+\setbeamercolor{title in head/foot}{parent=subsection in head/foot}
+
+\usesectionheadtemplate
+  {\hfill\insertsectionhead}
+  {\hfill\color{fg!50!bg}\insertsectionhead}
+
+%Head
+\defbeamertemplate*{headline}{esd theme}
+{%
+  \leavevmode%
+  \vskip3pt%
+  \hbox{%
+  \leavevmode%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=5ex,dp=1.125ex]{section in head/foot}%
+%	Logo of the Research Lab
+%%%%	\href{http://eda.ee.ntu.edu.tw/w04/index.php}{\includegraphics[width=.1\paperwidth,height=5ex]{./pics/logoLab}}%
+%	http://dvlab.ee.ntu.edu.tw/about.php
+%	http://dvlab.ee.ntu.edu.tw
+%	http://alcom.ee.ntu.edu.tw
+%	SOC VLSI-EDA Lab / http://cc.ee.ntu.edu.tw/~cchen/
+%    \insertsectionnavigationhorizontal{.4\paperwidth}{\hskip0pt plus1filll}{}%
+    \hfill%
+    \insertsection\ \ %
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=5ex,dp=1.125ex]{subsection in head/foot}%
+%    \insertsubsectionnavigationhorizontal{.5\paperwidth}{}{\hskip0pt plus1filll}%
+    \ \ \insertsubsection%
+  \end{beamercolorbox}%
+}}
+
+% Foot
+\defbeamertemplate*{footline}{esd theme}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm plus1fill,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle%
+    \ifbeamer@pagenumbers%
+    \hfill\insertframenumber/\inserttotalframenumber%
+    \fi%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+% Shadow
+
+\setbeamercolor{frametitle}{parent=subsection in head/foot}
+\setbeamercolor{frametitle right}{parent=section in head/foot}
+
+
+\pgfdeclarehorizontalshading[frametitle.bg,frametitle right.bg]{beamer@frametitleshade}{\paperheight}{%
+  color(0pt)=(frametitle.bg);
+  color(\paperwidth)=(frametitle right.bg)}
+
+\AtBeginDocument{
+  \pgfdeclareverticalshading{beamer@topshade}{\paperwidth}{%
+    color(0pt)=(bg);
+    color(4pt)=(black!50!bg)}
+}
+
+\addtobeamertemplate{headline}
+{}
+{%
+  \vskip-0.2pt
+  \pgfuseshading{beamer@topshade}
+  \vskip-2pt
+}
+
+
+\defbeamertemplate*{frametitle}{esd theme}
+{%
+  \nointerlineskip%
+  \vskip-2pt%
+  \hbox{\leavevmode
+    \advance\beamer@leftmargin by -12bp%
+    \advance\beamer@rightmargin by -12bp%
+    \beamer@tempdim=\textwidth%
+    \advance\beamer@tempdim by \beamer@leftmargin%
+    \advance\beamer@tempdim by \beamer@rightmargin%
+    \hskip-\Gm@lmargin\hbox{%
+      \setbox\beamer@tempbox=\hbox{\begin{minipage}[b]{\paperwidth}%
+          \vbox{}\vskip-.75ex%
+          \leftskip0.3cm%
+          \rightskip0.3cm plus1fil\leavevmode
+          \insertframetitle%
+          \ifx\insertframesubtitle\@empty%
+            \strut\par%
+          \else
+            \par{\usebeamerfont*{framesubtitle}{\usebeamercolor[fg]{framesubtitle}\insertframesubtitle}\strut\par}%
+          \fi%
+          \nointerlineskip
+          \vbox{}%
+          \end{minipage}}%
+      \beamer@tempdim=\ht\beamer@tempbox%
+      \advance\beamer@tempdim by 2pt%
+      \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{\beamer@tempdim}
+        \usebeamercolor{frametitle right}
+        \pgfpathrectangle{\pgfpointorigin}{\pgfpoint{\paperwidth}{\beamer@tempdim}}
+        \pgfusepath{clip}
+        \pgftext[left,base]{\pgfuseshading{beamer@frametitleshade}}
+      \end{pgfpicture}
+      \hskip-\paperwidth%
+      \box\beamer@tempbox%
+    }%
+    \hskip-\Gm@rmargin%
+  }%
+  \nointerlineskip
+    \vskip-0.2pt
+    \hbox to\textwidth{\hskip-\Gm@lmargin\pgfuseshading{beamer@topshade}\hskip-\Gm@rmargin}
+    \vskip-2pt
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Images.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Background
+\ifbeamer@backgroundimage%
+\usebackgroundtemplate{%
+%	Set the background of the presentation slides here.
+ \includegraphics[width=\paperwidth,height=\paperheight]{./pics/template_pics/zhiyang-latex-body}%
+}%
+\fi%
+
+
+% Logos
+%            \ifbeamer@logos%
+%            \addtobeamertemplate{title page}{%
+%              \vbox{%
+%                \vskip0.6\paperheight%
+%                \hbox{%
+%            %	Logo of the Department
+%                  \href{http://www.giee.ntu.edu.tw/portal/}{\includegraphics[width=0.1\paperwidth,height=0.1\paperheight]{./pics/logoDept}}%
+%                  \hskip0.65\paperwidth%
+%            %	Logo of the Organization
+%                  \href{http://www.ntu.edu.tw}{\includegraphics[width=0.1\paperwidth,height=0.1\paperheight]{./pics/logoOrg}}%
+%                }%
+%                \vskip-0.7\paperheight%
+%            }}%
+%            \fi%
+
+\mode
+<all>
